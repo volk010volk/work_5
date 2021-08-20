@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    min-width: 320px;
+    max-width: 1200px;
+    margin: auto;
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: aqua;
+    flex-basis: 10vh;
+}
+
+main {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+main > aside {
+    background-color: blue;
+    flex-basis: 20%;
+}
+
+main > section {
+    background-color: cadetblue;
+    flex: 1 1 auto;
+}
+
+main > section + aside {
+    background-color: darkred;
+    flex-basis: 20%;
+}
+
+footer {
+    background-color: darkgoldenrod;
+    flex-basis: 5vh;
+}
+
+@media screen and (max-width:960px) {
+    main > section + aside {
+        display: none;
+    }
+
+    main > aside {
+        flex-basis: 20vh;
+    }
+
+    main > section {
+        flex-basis: auto;
+        order: -1;
+    }
+}
